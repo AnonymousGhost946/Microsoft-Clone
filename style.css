@@ -1,0 +1,573 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+/* Header and layout fixes */
+header {
+    background-color: #ece1e1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+}
+
+.logo img {
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.menu {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.menu ul li {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+}
+
+.menu ul li a {
+    color: rgb(0, 0, 0);
+}
+
+.menu ul li a:hover {
+    text-decoration: underline;
+}
+
+i {
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+}
+
+/* Submenu styles */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    background-color: #212121;
+    width: 140px;
+    margin-top: 8px;
+    text-align: start;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.submenu ul li {
+    margin-top: 20px;
+    color: white;
+    display: block;
+
+}
+.submenu ul li:hover{cursor: pointer;text-decoration: underline;}
+
+
+/* Second submenu styles */
+.submenu-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 5;
+
+    width: 100%;
+
+}
+
+.second-submenu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 135vh;
+    width: 100%;
+    padding: 3%;
+
+    background-color: #212121;
+    color: rgb(255, 255, 255);
+}
+
+.second-submenu ul li:hover {
+    text-decoration: underline;
+}
+
+.second-submenu h3 {
+    margin-top: 10px;
+}
+
+.second-submenu ul li {
+    margin-top: 20px;
+}
+
+.second-submenu ul li a {
+    color: rgb(255, 255, 255);
+}
+
+.Others,
+.Developer {
+    margin-top: 20px;
+}
+
+/* Bottom section styles */
+.bottom-div {
+    height: 50px;
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+
+.bottom-div button {
+    height: 50px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-icons i {
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+#bars {
+    display: none;
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 866px) {
+    .menu {
+        display: none;
+        background-color: #fffefe;
+        position: absolute;
+        top: 48px;
+        left: 0px;
+        height: 120vh;
+        z-index: 12;
+        width: 100%;
+    }
+
+    .menu ul li {
+        display: block;
+        text-align: start;
+        margin-top: 20px;
+    }
+
+    #dot-border {
+        border: 2px dotted black;
+    }
+
+    .second-menu {
+        display: none;
+
+    }
+
+    #bars {
+        display: block;
+    }
+
+}
+
+/* Smaller screen size adjustments */
+@media only screen and (max-width: 570px) {
+
+
+    .search-icons i {
+        font-size: 15px;
+    }
+
+
+
+    .search-icons i:nth-child(1) {
+        display: none;
+    }
+
+    .logo {
+        margin-left: 10px;
+    }
+}
+
+/* 
+
+link css start here
+ */
+.link {
+    background-color: #C03BC4 !important;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+link a {
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+.link span {
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.link i {
+    font-size: 13px;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.link a:hover i {
+    transform: translateX(5px);
+}
+
+
+
+
+/* 
+
+image slider css start here
+ */
+
+ .slider-container{margin-bottom: 50px;}
+.position-image-and-text-box {
+    z-index: 2;
+    height: 130vh;
+    display: none;
+    /* Hide all slides by default */
+}
+
+.position-image-and-text-box.active {
+    display: block;
+    /* Show only the active slide */
+}
+
+.pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.pic img {
+    width: 97%;
+    height: 90%;
+}
+
+.text-box {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 90%;
+    width: 93%;
+    box-shadow: 1px 1px 3px rgb(214, 212, 212);
+    padding: 40px;
+}
+
+.text-box #heading,
+p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.text-box button {
+    background-color: #0067b8;
+    padding: 10px;
+    color: rgb(253, 251, 251);
+    border: none;
+    margin-bottom: 10px;
+}
+
+/* Chevron controls */
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.controls i {
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+/* 
+mian card css start here
+
+ */
+ .main-card {
+    display: grid;
+    grid-template-columns: 50% 50%; 
+    gap: 10px; 
+    justify-items: center; 
+    margin-top: 50px;
+}
+
+.card {
+    border: 1px solid rgb(236, 230, 230);
+    height: 520px; 
+    width: 97%;
+    box-shadow: 1px 1px 5px rgb(214, 212, 212);
+
+    background-color: rgb(255, 255, 255);
+    margin: 2px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card .new {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C03BC4 !important;
+    width: 50px;
+    color: white;
+    margin-bottom: 15PX;
+}
+
+.card .heading {
+    margin-left: 10px;
+}
+
+.card .text {
+    margin-left: 10px;
+    margin-right: 10px;
+  
+    height: 86px;
+}
+
+.card .text p {
+    word-spacing: 2px;
+    line-height: 20px;
+    font-size: 15px;
+    padding-top: 10px;
+    
+}
+
+button {
+    height: auto;
+    width: auto;
+    background-color: #0067b8;
+    padding: 8px;
+    margin-left: 10px;
+    color: white;
+    border: 0px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Responsive layout: Switch to 1 column on smaller screens */
+@media (max-width: 550px) {
+    .main-card {
+        grid-template-columns: 1fr; /* Stack cards in a single column */
+    }
+}
+#card2-heading{
+    margin-top: 50px;
+    
+}
+
+/* 
+position image and text box 2 css start hrere
+
+ */
+ .position-image-and-text-box2{
+    
+    height: 130vh;
+    margin-top: 80px;
+}
+ 
+.pic2{display: flex;justify-content: center;align-items: center;position: relative;}
+.pic2 img{width: 97%;height: 90%;}
+.text-box2{position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 90%;
+    width: 93%;
+    box-shadow: 1px 1px 3px rgb(214, 212, 212);
+    padding: 40px;
+
+}
+.text-box2 #heading2,p{margin-bottom: 15px;font-size: 22px;}
+.text-box button{
+    background-color: #0067b8;
+    padding: 10px;
+    color: rgb(253, 251, 251);
+    border: none;
+}
+
+
+/* 
+again card html css setting start here
+ */
+#title{margin-left: 10px;}
+
+/* 
+  service link containser css start here
+
+   */
+.service-links-container {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    justify-self: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.service-links {
+    margin: 9px;
+
+}
+
+.service-img {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.service-links-container img {
+    height: 40px;
+    display: block;
+}
+
+.service-links-container a {
+    color: #0067b8;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .service-links-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-self: center;
+        align-items: center;
+
+    }
+}
+
+/* 
+
+three :horizontal cards css start now
+ */
+.ai-heading{
+    margin:40px 0  5px 10px;
+}
+
+#horizontal-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* #horizontal-cards .card {
+    
+} */
+
+#horizontal-cards .text {
+    
+    height: 130px;
+}
+@media only screen and (max-width: 600px) {
+    #horizontal-cards{
+        grid-template-columns: repeat(1,1fr)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* 
+footer css start here
+ */
+
+.footer-submenu-container {
+    margin-top: 50px;
+    display: block;
+    width: 100%;
+    background-color: red;
+    height: auto;
+    
+}
+
+.footer-second-submenu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 135vh;
+    width: 100%;
+    padding: 3%;
+    
+    background-color: #212121;
+    color: rgb(255, 255, 255);
+}
+
+.footer-second-submenu ul li:hover {
+    text-decoration: underline;
+}
+
+.footer-second-submenu h3 {
+    margin-top: 10px;
+}
+
+.footer-second-submenu ul li {
+    margin-top: 20px;
+    
+}
+
+.footer-second-submenu ul li a {
+    color: white;
+    font-size: 12px;
+
+}
+.copyright{background-color:#212121;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 50px;text-align: center;
+font-size: 13px;
+}
+@media only screen and (max-width: 700px) {
+    .footer-second-submenu {
+        display: grid; /* Ensure the grid layout is applied */
+        grid-template-columns: repeat(1, 1fr); /* Two equal columns 
+        */
+        height: auto;
+    }
+}
+
